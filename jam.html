@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina | Group Jam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar glass-panel">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-brain"></i></div>
+            Lumina
+        </div>
+
+            <ul class="nav-links">
+      <li><a href="index.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="subjects.html" class="nav-link"><i class="fa-solid fa-book"></i> Subjects</a></li>
+      <li><a href="curriculum.html" class="nav-link"><i class="fa-solid fa-map"></i> Curriculum</a></li>
+      <li><a href="tutor.html" class="nav-link"><i class="fa-solid fa-robot"></i> AI Tutor</a></li>
+      <li><a href="jam.html" class="nav-link active"><i class="fa-solid fa-users"></i> Group Jam</a></li>
+      <li><a href="quiz.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Practice Quiz</a></li>
+      <li><a href="graph.html" class="nav-link"><i class="fa-solid fa-project-diagram"></i> Knowledge Graph</a></li>
+      <li><a href="profile.html" class="nav-link"><i class="fa-solid fa-database"></i> Data Hub</a></li>
+    </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="animate-fade-in">
+            <div>
+                <h1>Group Jam: Advanced Physics</h1>
+                <p class="subtitle">Collaborative problem solving with peers at your level</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <span class="user-profile">
+                    <div class="avatar" style="width:30px;height:30px;font-size:12px;">P1</div>
+                </span>
+                <span class="user-profile">
+                    <div class="avatar" style="width:30px;height:30px;font-size:12px;background:var(--accent-success)">
+                        P2</div>
+                </span>
+                <span class="user-profile">
+                    <div class="avatar" style="width:30px;height:30px;font-size:12px;background:var(--accent-primary)">
+                        P3</div>
+                </span>
+            </div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem;">
+            <div class="glass-panel chat-container animate-fade-in"
+                style="animation-delay: 0.1s; height: calc(100vh - 12rem);">
+                <div class="chat-history" id="jam-chat-history">
+                    <div class="msg animate-fade-in"
+                        style="background: rgba(255,255,255,0.05); align-self: center; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                        Jam Session created by Lumina Matchmaking
+                    </div>
+                    <div class="msg animate-fade-in"
+                        style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); align-self: flex-start; border-bottom-left-radius: 4px;">
+                        <strong><i class="fa-solid fa-user"></i> Peer 2 (Sarah)</strong><br>
+                        <p style="margin-top: 5px;">Has anyone figured out the third part of the wave function problem?
+                            I keep getting stuck when normalizing.</p>
+                    </div>
+                    <div class="msg animate-fade-in"
+                        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); align-self: flex-start; border-bottom-left-radius: 4px;">
+                        <strong><i class="fa-solid fa-user"></i> Peer 3 (David)</strong><br>
+                        <p style="margin-top: 5px;">I think you have to integrate from negative infinity to positive
+                            infinity. That's what the AI tutor review suggested earlier today.</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" class="chat-input-field" id="jam-input" placeholder="Discuss with your group...">
+                    <button class="btn btn-primary" id="jam-send"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+
+            <div class="glass-panel animate-fade-in" style="animation-delay: 0.2s; padding: 1.5rem;">
+                <h3>Current Objective</h3>
+                <p class="subtitle" style="font-size: 0.9rem; margin-top: 8px;">Collaboratively solve the Schrödinger
+                    equation for a 1D box.</p>
+
+                <h4 style="margin-top: 2rem; margin-bottom: 1rem;"><i class="fa-solid fa-robot"
+                        style="color: var(--accent-secondary)"></i> Lumina Hint</h4>
+                <div
+                    style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid var(--accent-secondary); padding: 12px; border-radius: 4px; font-size: 0.9rem;">
+                    Remember that the wave function must be zero at the boundaries of the box (x=0 and x=L). This
+                    condition restricts the possible values of k.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

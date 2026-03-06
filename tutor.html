@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina | AI Tutor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar glass-panel">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-brain"></i></div>
+            Lumina
+        </div>
+
+            <ul class="nav-links">
+      <li><a href="index.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="subjects.html" class="nav-link"><i class="fa-solid fa-book"></i> Subjects</a></li>
+      <li><a href="curriculum.html" class="nav-link"><i class="fa-solid fa-map"></i> Curriculum</a></li>
+      <li><a href="tutor.html" class="nav-link active"><i class="fa-solid fa-robot"></i> AI Tutor</a></li>
+      <li><a href="jam.html" class="nav-link"><i class="fa-solid fa-users"></i> Group Jam</a></li>
+      <li><a href="quiz.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Practice Quiz</a></li>
+      <li><a href="graph.html" class="nav-link"><i class="fa-solid fa-project-diagram"></i> Knowledge Graph</a></li>
+      <li><a href="profile.html" class="nav-link"><i class="fa-solid fa-database"></i> Data Hub</a></li>
+    </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="animate-fade-in">
+            <div>
+                <h1>Personalized AI Tutor</h1>
+                <p class="subtitle">Curriculum aligned: <strong>Quantum Mechanics Fundamentals</strong></p>
+            </div>
+            <div>
+                <button class="btn btn-outline"><i class="fa-solid fa-bars-progress"></i> View Knowledge Graph</button>
+            </div>
+        </header>
+
+        <div class="glass-panel chat-container animate-fade-in" style="animation-delay: 0.1s;">
+
+            <div class="chat-history" id="tutor-chat-history">
+                <div class="msg msg-ai animate-fade-in">
+                    <strong><i class="fa-solid fa-robot"></i> Lumina Tutor</strong><br>
+                    <p style="margin-top: 5px;">Welcome back, Alex. In our last session, we covered the basics of
+                        Wave-Particle duality. Given your strong performance there, are you ready to tackle
+                        Schrödinger's Equation? I pulled an analogy from your previous interactions that might help.</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" class="chat-input-field" id="tutor-input"
+                    placeholder="Type your answer or ask questions about the curriculum...">
+                <button class="btn btn-primary" id="tutor-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina | Practice Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .quiz-card {
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-primary);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: var(--accent-success);
+        }
+
+        .option-btn.incorrect {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+        }
+
+        .explanation {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--accent-primary);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar glass-panel">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-brain"></i></div> Lumina
+        </div>
+            <ul class="nav-links">
+      <li><a href="index.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="subjects.html" class="nav-link"><i class="fa-solid fa-book"></i> Subjects</a></li>
+      <li><a href="curriculum.html" class="nav-link"><i class="fa-solid fa-map"></i> Curriculum</a></li>
+      <li><a href="tutor.html" class="nav-link"><i class="fa-solid fa-robot"></i> AI Tutor</a></li>
+      <li><a href="jam.html" class="nav-link"><i class="fa-solid fa-users"></i> Group Jam</a></li>
+      <li><a href="quiz.html" class="nav-link active"><i class="fa-solid fa-list-check"></i> Practice Quiz</a></li>
+      <li><a href="graph.html" class="nav-link"><i class="fa-solid fa-project-diagram"></i> Knowledge Graph</a></li>
+      <li><a href="profile.html" class="nav-link"><i class="fa-solid fa-database"></i> Data Hub</a></li>
+    </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="animate-fade-in">
+            <div>
+                <h1>Dynamic RAG Quiz</h1>
+                <p class="subtitle">Generated based on your recent struggles with Quantum Mechanics</p>
+            </div>
+            <div><span style="font-weight: 600; color: var(--accent-success);">Score: <span
+                        id="quiz-score">0</span>/3</span></div>
+        </header>
+
+        <div class="glass-panel quiz-card animate-fade-in" style="animation-delay: 0.1s;" id="quiz-container">
+            <h3 style="margin-bottom: 20px;">Question 1 of 3</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">In the time-independent Schrödinger equation, what does
+                the Hamiltonian operator represent?</p>
+
+            <div id="options-1">
+                <button class="option-btn" onclick="checkAnswer(1, this, false)">A) The total momentum of the
+                    system</button>
+                <button class="option-btn" onclick="checkAnswer(1, this, true)">B) The total energy (kinetic +
+                    potential) of the system</button>
+                <button class="option-btn" onclick="checkAnswer(1, this, false)">C) The probability density of the
+                    particle</button>
+                <button class="option-btn" onclick="checkAnswer(1, this, false)">D) The angular momentum</button>
+            </div>
+
+            <div class="explanation" id="exp-1">
+                <strong><i class="fa-solid fa-robot"></i> Tutor Note:</strong> Correct! The Hamiltonian operator (H)
+                corresponds to the total energy of the system, which is the sum of kinetic and potential energies. Let's
+                keep going!
+            </div>
+
+            <button class="btn btn-primary" id="next-btn" style="margin-top: 20px; display: none;"
+                onclick="nextQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

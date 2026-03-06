@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina | Subjects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .subject-card {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            z-index: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .subject-physics::before {
+            background-image: url('https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=400&auto=format&fit=crop');
+        }
+
+        .subject-math::before {
+            background-image: url('https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=400&auto=format&fit=crop');
+        }
+
+        .subject-cs::before {
+            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop');
+        }
+
+        .subject-content {
+            z-index: 1;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar glass-panel">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-brain"></i></div>
+            Lumina
+        </div>
+
+            <ul class="nav-links">
+      <li><a href="index.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="subjects.html" class="nav-link active"><i class="fa-solid fa-book"></i> Subjects</a></li>
+      <li><a href="curriculum.html" class="nav-link"><i class="fa-solid fa-map"></i> Curriculum</a></li>
+      <li><a href="tutor.html" class="nav-link"><i class="fa-solid fa-robot"></i> AI Tutor</a></li>
+      <li><a href="jam.html" class="nav-link"><i class="fa-solid fa-users"></i> Group Jam</a></li>
+      <li><a href="quiz.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Practice Quiz</a></li>
+      <li><a href="graph.html" class="nav-link"><i class="fa-solid fa-project-diagram"></i> Knowledge Graph</a></li>
+      <li><a href="profile.html" class="nav-link"><i class="fa-solid fa-database"></i> Data Hub</a></li>
+    </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="animate-fade-in">
+            <div>
+                <h1>Your Subjects</h1>
+                <p class="subtitle">Personalized courses driven by RAG</p>
+            </div>
+        </header>
+
+        <div class="grid-cards animate-fade-in"
+            style="animation-delay: 0.1s; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+            <!-- Card -->
+            <div class="glass-panel card subject-card subject-physics">
+                <div class="subject-content">
+                    <h3>Advanced Physics</h3>
+                    <p class="subtitle" style="font-size: 0.9rem; margin-top: 4px;">12 Units Structured by RAG</p>
+                </div>
+                <div class="subject-content">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <p style="font-weight: 600; color: var(--accent-primary);">65% Complete</p>
+                            <div class="progress-container" style="width: 200px;">
+                                <div class="progress-bar" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='curriculum.html'"><i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="glass-panel card subject-card subject-math">
+                <div class="subject-content">
+                    <h3>Applied Mathematics</h3>
+                    <p class="subtitle" style="font-size: 0.9rem; margin-top: 4px;">Dynamic problem generation enabled
+                    </p>
+                </div>
+                <div class="subject-content">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <p style="font-weight: 600; color: var(--accent-secondary);">32% Complete</p>
+                            <div class="progress-container" style="width: 200px;">
+                                <div class="progress-bar" style="background: var(--accent-secondary); width: 32%"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="background: var(--accent-secondary);"
+                            onclick="window.location.href='curriculum.html'"><i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="glass-panel card subject-card subject-cs">
+                <div class="subject-content">
+                    <h3>Computer Science</h3>
+                    <p class="subtitle" style="font-size: 0.9rem; margin-top: 4px;">Algorithms & Data Structures</p>
+                </div>
+                <div class="subject-content">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <p style="font-weight: 600; color: var(--accent-success);">8% Complete</p>
+                            <div class="progress-container" style="width: 200px;">
+                                <div class="progress-bar" style="background: var(--accent-success); width: 8%"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="background: var(--accent-success);"
+                            onclick="window.location.href='curriculum.html'"><i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

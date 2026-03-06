@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina | Data Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .upload-zone {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--accent-primary);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar glass-panel">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-brain"></i></div> Lumina
+        </div>
+            <ul class="nav-links">
+      <li><a href="index.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="subjects.html" class="nav-link"><i class="fa-solid fa-book"></i> Subjects</a></li>
+      <li><a href="curriculum.html" class="nav-link"><i class="fa-solid fa-map"></i> Curriculum</a></li>
+      <li><a href="tutor.html" class="nav-link"><i class="fa-solid fa-robot"></i> AI Tutor</a></li>
+      <li><a href="jam.html" class="nav-link"><i class="fa-solid fa-users"></i> Group Jam</a></li>
+      <li><a href="quiz.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Practice Quiz</a></li>
+      <li><a href="graph.html" class="nav-link"><i class="fa-solid fa-project-diagram"></i> Knowledge Graph</a></li>
+      <li><a href="profile.html" class="nav-link active"><i class="fa-solid fa-database"></i> Data Hub</a></li>
+    </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="animate-fade-in">
+            <div>
+                <h1>Knowledge Data Hub</h1>
+                <p class="subtitle">Upload syllabuses, notes, and exams to feed the RAG engine.</p>
+            </div>
+            <div>
+                <div class="user-profile">
+                    <span style="font-weight: 500;">Alex</span>
+                    <div class="avatar">A</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-cards animate-fade-in" style="animation-delay: 0.1s; grid-template-columns: 2fr 1fr;">
+
+            <!-- Upload Section -->
+            <div class="glass-panel card">
+                <h3>Connect New Knowledge Source</h3>
+                <p class="subtitle" style="font-size: 0.9rem; margin-top: 8px;">Supported formats: PDF, DOCX, TXT</p>
+
+                <div class="upload-zone" id="upload-zone" onclick="simulateUpload()">
+                    <i class="fa-solid fa-cloud-arrow-up"
+                        style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 15px;"></i>
+                    <h4 id="upload-text">Click or drag a file here to upload</h4>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Active Context Files</h3>
+                <div class="file-item">
+                    <div><i class="fa-solid fa-file-pdf" style="color: #ef4444; margin-right: 10px;"></i>
+                        Fall_2024_Physics_Syllabus.pdf</div>
+                    <span style="color: var(--text-muted); font-size: 0.8rem;">Indexed <i
+                            class="fa-solid fa-check text-green-500"></i></span>
+                </div>
+                <div class="file-item">
+                    <div><i class="fa-solid fa-file-lines"
+                            style="color: var(--accent-primary); margin-right: 10px;"></i> LectureNotes_Week1-3.txt
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.8rem;">Indexed <i
+                            class="fa-solid fa-check text-green-500"></i></span>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="glass-panel card">
+                <h3>RAG Analytics</h3>
+
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Total Vectors</span>
+                    <strong style="font-size: 1.2rem; color: var(--accent-secondary);">14,208</strong>
+                </div>
+                <div class="progress-container" style="height: 4px; margin-top: 8px;">
+                    <div class="progress-bar" style="width: 100%; background: var(--accent-secondary);"></div>
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Avg. Retrieval Time</span>
+                    <strong style="font-size: 1.2rem; color: var(--accent-primary);">12ms</strong>
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Concepts Mapped</span>
+                    <strong style="font-size: 1.2rem; color: var(--accent-success);">43</strong>
+                </div>
+
+                <button class="btn btn-outline" style="width: 100%; margin-top: 2.5rem;"><i
+                        class="fa-solid fa-trash-can"></i> Clear All Context Data</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
