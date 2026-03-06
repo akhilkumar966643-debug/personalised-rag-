@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/chat.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/chat",
+      "dest": "/api/chat.py",
+      "methods": ["POST", "OPTIONS"]
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|ico|svg|woff|woff2|ttf))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/subjects",
+      "dest": "/subjects.html"
+    },
+    {
+      "src": "/curriculum",
+      "dest": "/curriculum.html"
+    },
+    {
+      "src": "/tutor",
+      "dest": "/tutor.html"
+    },
+    {
+      "src": "/jam",
+      "dest": "/jam.html"
+    },
+    {
+      "src": "/quiz",
+      "dest": "/quiz.html"
+    },
+    {
+      "src": "/graph",
+      "dest": "/graph.html"
+    },
+    {
+      "src": "/profile",
+      "dest": "/profile.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
